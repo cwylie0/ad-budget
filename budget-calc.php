@@ -16,5 +16,35 @@ Avg. Value of Sale: <input type="text" name="avgSale" id="avgSale"><br>
  </p>
 </form>
 
+
+echo "Projections";
+echo '<br>';
+echo '<br>';
+
+echo "Number of Sales Needed: ";
+$salesNeeded = $goal / $avgSale;
+echo $salesNeeded;
+echo '<br>';
+
+echo "Number of Leads Needed: ";
+$leadsNeeded = ($salesNeeded / $lcr) * 100;
+echo $leadsNeeded;
+echo '<br>';
+
+echo "Number of Clicks Needed: ";
+$clicksNeeded = ($leadsNeeded / $cr) * 100;
+echo round($clicksNeeded, 0);
+echo '<br>';
+
+echo "Number of Impressions Needed: ";
+$impressionsNeeded = ($clicksNeeded * $ctr);
+echo round($impressionsNeeded, 0);
+echo '<br>';
+
+echo "Cost of Budget Recommended: $";
+$budget = $clicksNeeded * $cpc;
+echo round($budget, 2);
+?>
+
 </body>
 </html>
